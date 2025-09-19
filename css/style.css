@@ -1,0 +1,135 @@
+
+.square{
+    position: absolute;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    
+}
+.nostop{
+    margin-top: 400px;
+}
+
+p{
+    text-align: center;
+    margin: 25% auto;
+    color: aliceblue;
+    font-size: xx-large;
+}
+.nostop:hover{
+    animation: rotate 0.6s linear infinite;
+}
+
+.stop:hover{
+    animation: rotate 0.6s linear ;
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotate( 360deg ) scale( 1 );
+
+  }
+}
+
+.fond{
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+.bipfond{
+    position: absolute;
+    top: 900px;
+    overflow: hidden;
+    width: 100%;
+    height: 600px;
+    left: 0%;
+
+}
+
+.panneau{
+    position: absolute;
+    width: 10px;
+    bottom: 200px;
+    left: 50%;
+}
+
+.play{
+    position: absolute;
+    left: 70px;
+    top: 30%;
+}
+
+.panneau:hover ~ .bipbip > img{
+    animation: moveAndGrow 6s forwards;
+    pointer-events: none;
+
+}
+
+.panneau:hover ~ .message{
+    animation: showMessage 6s forwards;
+    pointer-events: none;
+}
+
+.bipbip{
+    opacity: 1;
+    position: absolute;
+    bottom: 0%;
+    width: 100px;
+    left: -100px;
+}
+
+.bipbip > img{
+    width: 100px;
+}
+
+.message {
+    position: absolute;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    top: 100px; 
+    left: 20px; 
+    opacity: 0;
+}
+
+@keyframes showMessage {
+    0% {
+        transform: translateX(0);
+        width: 100px;
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(40vw);
+        width: 300px;
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(100vw);
+        width: 100px;
+        opacity: 0;
+    }
+}
+
+@keyframes moveAndGrow {
+    0% {
+        transform: translateX(0);
+        width: 100px;
+    }
+    50% {
+        transform: translateX(40vw);
+        width: 300px;
+    }
+    100%{
+        transform: translateX(100vw);
+        width: 100px;
+    }
+}
